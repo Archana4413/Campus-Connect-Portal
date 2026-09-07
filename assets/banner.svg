@@ -91,7 +91,7 @@
     <!-- Pill 3 -->
     <g transform="translate(250, 0)">
       <rect x="-90" y="-14" width="180" height="28" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="'Segoe UI', sans-serif" font-weight="600">👩‍💻 Dhruvi Mittal</text>
+      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-size="12" font-family="'Segoe UI', sans-serif" font-weight="600">👩‍💻 Archana</text>
     </g>
   </g>
 </svg>

@@ -68,7 +68,7 @@ export default function AuthModule({ initialMode = 'login' }) {
           <input
             type="text"
             name="name"
-            placeholder="Full Name (e.g. Dhruvi Mittal)"
+            placeholder="Full Name (e.g. Archana)"
             value={formData.name}
             onChange={handleChange}
             style={styles.input}

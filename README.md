@@ -16,7 +16,7 @@
 [![Course](https://img.shields.io/badge/Course-CS3301%20Full%20Stack%20Development-0A2240?style=for-the-badge&logo=bookstack&logoColor=white)](https://github.com/Archana4413/Campus-Connect-Portal)
 [![Author](https://img.shields.io/badge/Author-Archana4413-0d5c3a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Archana4413)
 [![Institution](https://img.shields.io/badge/Institution-RV%20University-a61c1c?style=for-the-badge&logo=google-classroom&logoColor=white)](https://rvu.edu.in)
-[![Status](https://img.shields.io/badge/Status-Active%20%E2%9C%94-107c41?style=for-the-badge)](https://github.com/Dhruvi-tech/Campus-Connect-Portal)
+[![Status](https://img.shields.io/badge/Status-Active%20%E2%9C%94-107c41?style=for-the-badge)](https://github.com/Archana4413/Campus-Connect-Portal)
 
 <br/>
 
