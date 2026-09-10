@@ -13,10 +13,10 @@
 <br/><br/>
 
 <!-- Metadata Badges -->
-[![Course](https://img.shields.io/badge/Course-CS3301%20Full%20Stack%20Development-0A2240?style=for-the-badge&logo=bookstack&logoColor=white)](https://github.com/Archana4413/Campus-Connect-Portal)
-[![Author](https://img.shields.io/badge/Author-Archana4413-0d5c3a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Archana4413)
+[![Course](https://img.shields.io/badge/Course-CS3301%20Full%20Stack%20Development-0A2240?style=for-the-badge&logo=bookstack&logoColor=white)](https://github.com/gedilabimalabsc24-code/Campus-Connect-Portal)
+[![Author](https://img.shields.io/badge/Author-gedilabimalabsc24--code-0d5c3a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gedilabimalabsc24-code)
 [![Institution](https://img.shields.io/badge/Institution-RV%20University-a61c1c?style=for-the-badge&logo=google-classroom&logoColor=white)](https://rvu.edu.in)
-[![Status](https://img.shields.io/badge/Status-Active%20%E2%9C%94-107c41?style=for-the-badge)](https://github.com/Archana4413/Campus-Connect-Portal)
+[![Status](https://img.shields.io/badge/Status-Active%20%E2%9C%94-107c41?style=for-the-badge)](https://github.com/gedilabimalabsc24-code/Campus-Connect-Portal)
 
 <br/>
 
@@ -152,7 +152,7 @@ Ensure you have [Node.js](https://nodejs.org/) (v18 or higher) and `npm` install
 
 #### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/Archana4413/Campus-Connect-Portal.git
+git clone https://github.com/gedilabimalabsc24-code/Campus-Connect-Portal.git
 cd Campus-Connect-Portal
 ```
 
@@ -179,19 +179,19 @@ http://localhost:5173
 
 <div align="center">
 
-<img src="https://github.com/Archana4413.png" width="90" style="border-radius: 50%;" alt="Archana4413 Avatar" />
+<img src="https://github.com/gedilabimalabsc24-code.png" width="90" style="border-radius: 50%;" alt="gedilabimalabsc24-code Avatar" />
 
-### **Archana4413**
+### **gedilabimalabsc24-code**
 **RV University** — School of Computer Science & Engineering  
 *CS3301 - Full Stack Development*
 
-[![GitHub Profile](https://img.shields.io/badge/GitHub-Archana4413-181717?style=flat-square&logo=github)](https://github.com/Archana4413)
+[![GitHub Profile](https://img.shields.io/badge/GitHub-gedilabimalabsc24--code-181717?style=flat-square&logo=github)](https://github.com/gedilabimalabsc24-code)
 
 <br/>
 
 <!-- Local SVG Wave Footer -->
 <img src="./assets/footer.svg" alt="Footer Wave Divider" width="100%" />
 
-<sub>&copy; 2026 RV University • Campus Connect Portal • Maintained by Archana4413</sub>
+<sub>&copy; 2026 RV University • Campus Connect Portal • Maintained by gedilabimalabsc24-code</sub>
 
 </div>
