@@ -1,197 +1,226 @@
+# Campus Connect Portal 🎓
+
+> **A Next-Generation Campus Management & Modular Academic Hub**  
+> Designed for **RV University — School of Computer Science & Engineering**  
+> *Course: CS3301 Full Stack Development (Semester V)*
+
+---
+
+![Project Banner](./assets/banner.svg)
+
 <div align="center">
 
-<!-- Local SVG Animated Banner (100% Uptime & Reliable) -->
-<img src="./assets/banner.svg" alt="Campus Connect Portal Banner" width="100%" />
+[![React Version](https://img.shields.io/badge/Frontend-React%2019-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![Vite Powered](https://img.shields.io/badge/Bundler-Vite%208-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Architecture](https://img.shields.io/badge/Design-Component--Based-107c41?style=flat-square)](https://react.dev/learn/your-first-component)
+[![State](https://img.shields.io/badge/State%20Model-Declarative%20Hooks-0284c7?style=flat-square)](https://react.dev/reference/react/useState)
+[![Environment](https://img.shields.io/badge/Build-Production%20Verified-success?style=flat-square)](https://vitejs.dev/guide/build.html)
 
-<br/>
-
-<!-- Animated Typing Subtitle -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=20&duration=3000&pause=1000&color=107C41&center=true&vCenter=true&width=550&lines=Seamless+Campus+Life+%26+Resource+Hub;Empowering+Students%2C+Faculty+%26+Admins;Real-Time+Academic+Management;Crafted+with+React+19+%26+Vite" alt="Typing SVG" />
-</a>
-
-<br/><br/>
-
-<!-- Metadata Badges -->
-[![Course](https://img.shields.io/badge/Course-CS3301%20Full%20Stack%20Development-0A2240?style=for-the-badge&logo=bookstack&logoColor=white)](https://github.com/gedilabimalabsc24-code/Campus-Connect-Portal)
-[![Author](https://img.shields.io/badge/Author-gedilabimalabsc24--code-0d5c3a?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gedilabimalabsc24-code)
-[![Institution](https://img.shields.io/badge/Institution-RV%20University-a61c1c?style=for-the-badge&logo=google-classroom&logoColor=white)](https://rvu.edu.in)
-[![Status](https://img.shields.io/badge/Status-Active%20%E2%9C%94-107c41?style=for-the-badge)](https://github.com/gedilabimalabsc24-code/Campus-Connect-Portal)
-
-<br/>
-
-<p align="center">
-  <a href="#-about-the-project">About</a> •
-  <a href="#-key-features">Features</a> •
-  <a href="#-portal-roles--views">Portal Views</a> •
-  <a href="#-tech-stack--tools">Tech Stack</a> •
-  <a href="#-project-architecture">Architecture</a> •
-  <a href="#-quick-start-guide">Quick Start</a> •
-  <a href="#-author">Author</a>
-</p>
+[Overview](#-overview) •
+[Architecture](#-system-architecture) •
+[Role Portals](#-role-portals--capabilities) •
+[Component Matrix](#-component-specifications) •
+[Setup & Usage](#-getting-started) •
+[Project Structure](#-repository-layout)
 
 </div>
 
 ---
 
-### 🌐 About the Project
+## 📌 Overview
 
-**Campus Connect Portal** is an intuitive, all-in-one digital gateway engineered for the **RV University School of Computer Science & Engineering**. It consolidates daily campus communication, academic resource access, real-time university highlights, and role-based workflows into a unified, high-performance web application.
+**Campus Connect Portal** is a unified digital ecosystem connecting students, faculty members, and administrative staff across campus. Built using a reactive component-based architecture, the platform streamlines circular distribution, academic assignment tracking, interactive attendance monitoring, and profile management into an intuitive web interface.
 
-Designed with clean typography, responsive layout, and modern interactive modules, Campus Connect ensures students, professors, and administrative personnel can seamlessly access services tailored to their daily campus needs.
+### Key Capabilities
 
----
-
-### ✨ Key Features
-
-<table>
-  <tr>
-    <td width="50%">
-      <h4>🏛️ Institutional Branding & Navbar</h4>
-      <ul>
-        <li>Distinctive RV University brand badge and department identification</li>
-        <li>Quick-jump anchors to Login and Student Registration</li>
-        <li>Mobile-responsive layout with seamless viewport adaptation</li>
-      </ul>
-    </td>
-    <td width="50%">
-      <h4>🌟 Hero Showcase Banner</h4>
-      <ul>
-        <li>Course identifier badge (<code>CS3301 - Full Stack Development</code>)</li>
-        <li>High-contrast campus visual backdrop with smooth text overlay</li>
-        <li>Interactive call-to-action to explore role-specific views</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <h4>🎞️ Interactive Carousel Slider</h4>
-      <ul>
-        <li>Showcases campus facilities, learning spaces, and academic tools</li>
-        <li>Next & Previous tactile navigation buttons</li>
-        <li>Dynamic indicator pills highlighting the active slide</li>
-      </ul>
-    </td>
-    <td width="50%">
-      <h4>🔐 React Authentication Module</h4>
-      <ul>
-        <li>Instant toggle between <b>Student Login</b> and <b>Registration</b></li>
-        <li>Reactive form inputs with client-side state handling</li>
-        <li>Structured for seamless API integration with backend services</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+* **Decoupled Component Hierarchy**: Pure presentational views receive configuration via props, while parent containers handle reactive state transitions.
+* **Role-Specific Dashboards**: On-demand dashboard rendering for **Student**, **Faculty**, and **Admin** workflows.
+* **Event-Driven Interactions**: Dynamic tab navigation, interactive circular detail popups (`DetailModal`), submission toggling, and live attendance incrementation.
+* **Full-Spectrum Responsiveness**: Styled with flexible CSS grid and flex layouts, custom gradients, and fluid typography.
 
 ---
 
-### 👥 Portal Roles & Views
+## 🏛️ System Architecture
 
-<div align="center">
+The client application separates stateful containers from reusable presentation components:
 
-| Role | Target Audience | Key Capabilities |
+```mermaid
+flowchart TD
+    subgraph UI_Root["Application Root (App.jsx)"]
+        Nav["Branded Navigation & Campus Hero"]
+        Slider["Campus Highlights Slider"]
+        Grid["Role Selector (roles-grid)"]
+    end
+
+    subgraph Roles["Role Cards (RoleCard.jsx)"]
+        R1["Student View"]
+        R2["Faculty View"]
+        R3["Admin View"]
+    end
+
+    subgraph ActiveView["Modular Viewport (PortalView.jsx)"]
+        Header["PortalHeader (Back Nav & Info)"]
+        NavTabs["TabBar (Dynamic Tabs)"]
+        Panels["Tab Content Renderer"]
+        Modal["DetailModal (Circular Dialog)"]
+    end
+
+    subgraph Auth["Authentication (AuthModule.jsx)"]
+        AuthForm["Student Registration / Login"]
+    end
+
+    Grid --> R1 & R2 & R3
+    R1 & R2 & R3 -->|"handleSelectRole()"| ActiveView
+    ActiveView --> Header
+    ActiveView --> NavTabs
+    ActiveView --> Panels
+    Panels --> Modal
+    UI_Root --> Auth
+```
+
+---
+
+## 👥 Role Portals & Capabilities
+
+| Portal View | Key Workflows | Interactive Elements |
 | :--- | :--- | :--- |
-| **👨‍🎓 Student Portal** | Enrolled Undergraduates & Postgraduates | • Browse enrolled course materials<br/>• Track attendance & exam timetables<br/>• View real-time semester grades & notices |
-| **👨‍🏫 Faculty Portal** | Teaching & Research Faculty | • Upload syllabus and lecture notes<br/>• Record & review classroom attendance<br/>• Publish academic marks & student feedback |
-| **🛡️ Admin Portal** | University Administration | • Manage student & faculty registry<br/>• Broadcast university-wide circulars<br/>• System oversight & analytical reports |
-
-</div>
+| **Student** | • Real-time circular notices<br/>• Assignment submission tracking<br/>• Attendance calculation & logging<br/>• Academic profile overview | • `[View Details]` modal dialogs<br/>• Pending ⟷ Submitted status toggles<br/>• Interactive `+ Check In` session counter<br/>• Real-time progress bar animations |
+| **Faculty** | • Department notice broadcasting<br/>• Course assignment distribution<br/>• Class attendance management | • Notice creation controls<br/>• Submission status indicators |
+| **Administrator** | • Registry management<br/>• System-wide notice control<br/>• Institutional audit logs | • User administration tools<br/>• System metric panels |
 
 ---
 
-### 🛠️ Tech Stack & Tools
+## 🧩 Component Specifications
 
-<div align="center">
+The frontend implements React best practices, adhering to clean prop contracts and unidirectional data flow:
 
-| Frontend | Styling & Assets | Backend & Tools |
-| :---: | :---: | :---: |
-| ![React](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) | ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) |
-| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) | ![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white) |
-| ![JavaScript](https://img.shields.io/badge/ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) | ![Responsive](https://img.shields.io/badge/Mobile_Ready-107c41?style=for-the-badge&logo=google-chrome&logoColor=white) | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) |
-
-</div>
+| Component | Category | Inbound Props | Internal State | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| `RoleCard.jsx` | Presentation | `title`, `icon`, `features`, `borderClass`, `bgBtnClass`, `btnText`, `onSelect`, `isActive` | None | Displays selectable user tier card with capability bullets and action button. |
+| `PortalHeader.jsx` | Navigation | `title`, `icon`, `subtitle`, `onBack` | None | Header bar containing section branding and a smooth exit action back to campus view. |
+| `TabBar.jsx` | Navigation | `tabs`, `activeTab`, `onTabChange` | None | Renders interactive pills and dispatches tab switch events upstream. |
+| `ItemCard.jsx` | Presentation | `title`, `meta`, `badge`, `badgeType`, `actionText`, `onAction`, `children` | None | Standardized container for notice items, assignment records, and metrics. |
+| `DetailModal.jsx` | Feedback | `isOpen`, `item`, `onClose` | None | Accessible overlay popup showing complete circular details with dismiss triggers. |
+| `PortalView.jsx` | Container | `role`, `onBack` | `activeTab`, `selectedItem`, `assignments`, `attendance`, `profileStatus` | Central state coordinator rendering appropriate panels and handling user mutations. |
+| `AuthModule.jsx` | Form / Auth | `initialMode` | `mode`, form state fields | Toggleable authentication interface for student registration and login. |
 
 ---
 
-### 📁 Project Architecture
+## 💻 Tech Stack
 
-```plaintext
+* **Frontend Framework**: React 19 (Hooks, JSX, Virtual DOM)
+* **Tooling & Build System**: Vite 8 (Hot Module Replacement, ESBuild)
+* **Styling**: Vanilla CSS3 (Custom Properties, Flexbox, CSS Grid, Fluid Typography)
+* **Icons & Vector Assets**: Custom SVG Components & WebP Visuals
+* **Runtime**: Node.js (v18+)
+
+---
+
+## 📁 Repository Layout
+
+```
 campus-connect-portal/
-├── assets/                          # Repository documentation visuals & SVGs
-│   ├── banner.svg                   # Custom vector animated hero banner
-│   └── footer.svg                   # Flowing wave footer divider
-├── client/                          # Frontend Application (Vite + React)
-│   ├── index.html                   # Primary HTML document & role showcase
-│   ├── package.json                 # Frontend dependencies and scripts
-│   ├── vite.config.js               # Vite bundler configuration
+├── assets/                          # SVG illustrations and banner resources
+│   ├── banner.svg                   # Vector header banner
+│   └── footer.svg                   # Flowing wave SVG divider
+├── client/                          # React client application
+│   ├── index.html                   # HTML entry point with React root mount
+│   ├── vite.config.js               # Vite project configuration
+│   ├── package.json                 # Client dependencies and npm scripts
 │   └── src/
-│       ├── main.jsx                 # React root bootstrap
-│       ├── carousel.js              # Interactive carousel controller logic
-│       ├── style.css                # Global stylesheet & design tokens
-│       ├── assets/                  # Campus imagery & visual media
+│       ├── main.jsx                 # Application DOM bootstrap
+│       ├── App.jsx                  # Top-level state coordinator & role switcher
+│       ├── carousel.js              # Campus highlights slider logic
+│       ├── style.css                # Base stylesheet and university design tokens
+│       ├── portal.css               # Portal-specific layout, card & modal rules
+│       ├── index.css                # Global typography and reset definitions
+│       ├── assets/                  # Campus images and icons
 │       └── components/
-│           └── AuthModule.jsx       # Student login & registration component
-├── server/                          # Backend API Architecture
-│   ├── package.json                 # Server dependencies & scripts
+│           ├── AuthModule.jsx       # Student authentication view
+│           ├── DetailModal.jsx      # Modal popup for circulars
+│           ├── ItemCard.jsx         # Card rows for notices & assignments
+│           ├── PortalHeader.jsx     # Slate portal banner & back trigger
+│           ├── PortalView.jsx       # Role container with tab state & metrics
+│           ├── RoleCard.jsx         # Modular role cards
+│           └── TabBar.jsx           # Reusable tab button navigation
+├── server/                          # Backend API services
+│   ├── package.json                 # Server dependencies
 │   └── src/
-│       ├── app.js                   # Application initialization
-│       ├── config/                  # Database & environment setups
-│       ├── controllers/             # Business logic controllers
-│       ├── middleware/              # Auth & error middlewares
-│       └── models/                  # Database schemas
+│       ├── app.js                   # Express application entry
+│       ├── config/                  # Database connections
+│       ├── controllers/             # Request handlers
+│       ├── middleware/              # Auth & validation middlewares
+│       └── models/                  # Data models
+├── EXPERIMENT_5.md                  # Lab report documentation (Experiment 5)
 ├── package.json                     # Root configuration
-└── README.md                        # Documentation
+└── README.md                        # Project documentation
 ```
 
 ---
 
-### 🚀 Quick Start Guide
+## 🚀 Getting Started
 
-#### Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) (v18 or higher) and `npm` installed.
+### Prerequisites
+* [Node.js](https://nodejs.org/) (version 18 or higher recommended)
+* `npm` (bundled with Node.js)
 
-#### Step 1: Clone the Repository
-```bash
-git clone https://github.com/gedilabimalabsc24-code/Campus-Connect-Portal.git
-cd Campus-Connect-Portal
-```
+### 1. Installation
 
-#### Step 2: Install Dependencies
+Install dependencies for the client application:
+
 ```bash
 cd client
 npm install
 ```
 
-#### Step 3: Run the Development Server
+*(Optional)* Install dependencies for backend services:
+
 ```bash
+cd ../server
+npm install
+```
+
+### 2. Running the Development Server
+
+Start the Vite development server:
+
+```bash
+cd client
 npm run dev
 ```
 
-#### Step 4: Access the Portal
-Open your browser and navigate to:
+The application will be available at:
 ```
 http://localhost:5173
 ```
 
+### 3. Production Build
+
+To compile and bundle the frontend for production deployment:
+
+```bash
+cd client
+npm run build
+```
+
+The production assets will be output to `client/dist/`.
+
 ---
 
-### 👤 Author
+## 🧪 Laboratory Documentation
+
+Comprehensive documentation for **Experiment 5: Building Modular Frontend Applications Using a Component-Based Approach (React)** is located in [`EXPERIMENT_5.md`](./EXPERIMENT_5.md). It outlines:
+* Theoretical fundamentals of component composition, props, and `useState`.
+* Step-by-step algorithms and implementation breakdown.
+* Component interaction models and state mutations.
+* Verification checklists and test case outputs.
+
+---
 
 <div align="center">
 
-<img src="https://github.com/gedilabimalabsc24-code.png" width="90" style="border-radius: 50%;" alt="gedilabimalabsc24-code Avatar" />
+![Footer Wave](./assets/footer.svg)
 
-### **gedilabimalabsc24-code**
-**RV University** — School of Computer Science & Engineering  
-*CS3301 - Full Stack Development*
-
-[![GitHub Profile](https://img.shields.io/badge/GitHub-gedilabimalabsc24--code-181717?style=flat-square&logo=github)](https://github.com/gedilabimalabsc24-code)
-
-<br/>
-
-<!-- Local SVG Wave Footer -->
-<img src="./assets/footer.svg" alt="Footer Wave Divider" width="100%" />
-
-<sub>&copy; 2026 RV University • Campus Connect Portal • Maintained by gedilabimalabsc24-code</sub>
+<sub>School of Computer Science & Engineering • RV University • Academic Session 2026–2027</sub>
 
 </div>

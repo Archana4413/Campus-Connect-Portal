@@ -1,4 +1,4 @@
-// Campus Connect Portal - Authentication Module
+﻿// Campus Connect Portal - Authentication Module
 // Provides student login and registration interfaces
 import { useState } from 'react';
 
@@ -68,7 +68,7 @@ export default function AuthModule({ initialMode = 'login' }) {
           <input
             type="text"
             name="name"
-            placeholder="Full Name (e.g. Archana)"
+            placeholder="Full Name (e.g. Alex Johnson)"
             value={formData.name}
             onChange={handleChange}
             style={styles.input}
@@ -203,4 +203,4 @@ cardContainer: {
     cursor: 'pointer'
   }
 
-};
+}; 
